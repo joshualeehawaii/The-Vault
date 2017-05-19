@@ -1,21 +1,22 @@
 //'use strict';
 module.exports = function() {
 
-  function setvalue(key, value){
+  var vault = {};
 
-
+  function setValue(key, value){
+    vault[key] = value;
+    return vault[key];
   }
 
-
   function getValue(key){
-    if( key === value){
-      return value;
+    if(vault.hasOwnProperty(key)){
+      return vault[key];
     } else {
       return null;
     }
   }
   return {
-    setvalue: setvalue,
+    setValue: setValue,
     getValue: getValue
   };
 
